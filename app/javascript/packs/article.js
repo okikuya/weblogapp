@@ -32,6 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
       handleHeartDisplay(hasLiked)
     })
 
+  $('.show-comment-form').on('click', () => {
+    $('.show-comment-form').addClass('hidden')
+    $('.comment-text-area').removeClass('hidden')
+  })
+
   $('.inactive-heart').on('click', () => {
     axios.post(`/articles/${articleId}/like`)
       .then((response) => {
